@@ -4,10 +4,11 @@
  */
 package Tienda_Joseph.demo.repository;
 
-/**
- *
- * @author josep
- */
-public interface RutaRepository {
-    
+import Tienda_Joseph.demo.domain.Ruta;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RutaRepository extends JpaRepository<Ruta, Integer> {
+
+    List<Ruta> findAllByOrderByRequiereRolAsc();
 }
